@@ -1,0 +1,14 @@
+*{
+	border: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#menu{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 300px;
+	background-color: #DDDDEE;
+}
