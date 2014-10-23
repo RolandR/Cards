@@ -1,21 +1,52 @@
 <!doctype html>
 <html>
 	<head>
+		<meta charset="utf-8" />
 		<title>
 			Cards
 		</title>
 		<link href="./_css/style.css" rel="stylesheet" type="text/css" media="all">
+		<link href="./_css/generic.css" rel="stylesheet" type="text/css" media="all">
+		<link href="./_css/togglable.css" rel="stylesheet" type="text/css" media="all">
 	</head>
 	<body>
 		<div id="screen">
 			<div id="menu">
-				<h2>New Run</h2>
-				<div id="menuButton">
+				<h2 id="pageTitle"></h2>
+				<button id="menuButton">
 					&#x2699;
+				</button>
+			</div>
+			<div class="contentScreen" id="setScreen">
+				<div class="innerContent" id="sets">
+					<h2 id="deckName"></h2>
 				</div>
+				<footer class="footer" id="setsFooter">
+					<button class="footerButton right" id="startButton" disabled>Start</button>
+				</footer>
+			</div>
+			<div class="contentScreen" id="quizScreen" style="display: none;">
+				<div class="innerContent" id="quiz">
+					<div id="quizProgress"><div id="quizProgressBar"></div></div>
+					<!--div id="correctContainer">
+						<div id="correctCounter">12 Correct</div>
+						<div id="incorrectCounter">2 Incorrect</div>
+					</div-->
+					
+					<p id="cardFront"></p>
+					<div id="hiddenCard" data-hidden="true">
+						<p id="hiddenText">Show</p>
+						<p id="cardBack"></p>
+					</div>
+				</div>
+				<footer class="footer" id="quizFooter">
+					<button class="footerButton right" id="correctButton" disabled>I was right</button>
+					<button class="footerButton" id="wrongButton" disabled>I was wrong</button>
+				</footer>
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript" src="./_js/Togglable.js"></script>
 	<script type="text/javascript" src="./_js/spanish.js"></script>
 	<script type="text/javascript" src="./_js/cards.js"></script>
 </html>
