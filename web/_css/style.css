@@ -1,16 +1,26 @@
 
 @import url(openSansFont/OpenSans.css);
 
+*{
+	border: none;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body, html{
+	height: 100%;
+	width: 100%;
+}
+
 body{
 	font-family: OpenSans, sans-serif;
 }
 
 #screen{
 	height: 100%;
-	position:absolute;
-    left: 0px;
-    right: 0px;
-	max-width: 500px;
+	width: 100%;
+	max-width: 768px;
 	background-color: #DDDDEE;
 	margin: 0px auto;
 }
@@ -18,17 +28,17 @@ body{
 #menu{
 	position: relative;
 	width: 100%;
-	height: 50px;
+	height: 2em;
 	background-color: #8888AA;
 	color: #FFFFFF;
 	text-shadow: 1px 1px 0px #000000;
-	font-size: 25px;
+	font-size: 2em;
 }
 
 #menu h2{
 	font-weight: 200;
-	line-height: 1.2em;
-	margin-left: 10px;
+	line-height: 1.1em;
+	margin-left: 3%;
 }
 
 #menuButton{
@@ -36,44 +46,11 @@ body{
 	position: absolute;
 	right: 0px;
 	top: 0px;
-	height: 40px;
-	width: 40px;
+	height: 1.5em;
+	width: 1.5em;
+	border: 1px rgba(0, 0, 0, 0.5) solid;
+	background-color: rgba(255, 255, 255, 0.3);
 	text-align: center;
-	margin: 5px;
+	margin: 0.25em;
 	cursor: pointer;
-}
-
-.contentScreen{
-	position: absolute;
-	top: 50px;
-	right: 0px;
-	bottom: 0px;
-	left: 0px;
-}
-
-.footer{
-	position: absolute;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	height: 50px;
-	background-color: #8888AA;
-}
-
-.innerContent{ /* For use with footers */
-	position: absolute;
-	bottom: 50px;
-	left: 0px;
-	right: 0px;
-	top: 0px;
-}
-
-.right{
-	float: right;
-}
-
-.footerButton{
-	height: 40px;
-	margin: 5px;
-	width: 100px;
 }
