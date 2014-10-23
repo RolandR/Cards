@@ -74,22 +74,31 @@ function buildSetsScreen(cards){
 				}
 			}
 		}
+
+		var shuffleCards = orderButton.isToggled();
 		
-		startQuiz();
+		startQuiz(shuffleCards);
 	}
 }
 
 function showSetsScreen(){
 	document.getElementById("setScreen").style.display = "block";
 	document.getElementById("quizScreen").style.display = "none";
+	document.getElementById("menuButton").style.display = "none";
 	document.getElementById("pageTitle").innerHTML = "Select Card Decks";
 }
 
-function startQuiz(){
+function startQuiz(shuffleCards){
 	document.getElementById("setScreen").style.display = "none";
 	document.getElementById("quizScreen").style.display = "block";
+	var menuButton = document.getElementById("menuButton");
+	menuButton.style.display = "inline-block";
+	menuButton.onclick = showSetsScreen;
 	
 	var cardStack = selectedCards;
+	if(shuffleCards){
+		cardStack = shuffle(cardStack);
+	}
 	var correctCards = [];
 	var wrongCards = [];
 	
@@ -125,6 +134,9 @@ function startQuiz(){
 				return;
 			}
 			cardStack = wrongCards;
+			if(shuffleCards){
+				cardStack = shuffle(cardStack);
+			}
 			wrongCards = [];
 			pass++;
 			passLength = cardStack.length;
@@ -132,7 +144,6 @@ function startQuiz(){
 		
 		progressBarEl.innerHTML = "Card "+(passLength - cardStack.length + 1)+" of "+passLength;
 		progressBarEl.style.width = ((passLength - cardStack.length + 1) / passLength) * progressBarContainer.offsetWidth + "px";
-		console.log(progressBarEl.style.width);
 		
 		var card = cardStack[0];
 		
