@@ -134,11 +134,11 @@ div.orderButton[data-toggled="true"]{
 }
 
 #cardFront{
-	margin: 50px 15px;
-	font-size: 3em;
+	margin: 30px 15px;
+	font-size: 30px;
 	text-align: center;
 	font-weight: 200;
-	line-height: 1em;
+	line-height: 1.2em;
 }
 
 #hiddenCard[data-hidden="true"]{
@@ -147,7 +147,6 @@ div.orderButton[data-toggled="true"]{
 	border-radius: 5px 5px 5px 40px;
 	background-color: #EEEEFF;
 	margin: 15px;
-	min-height: 150px;
 	cursor: pointer;
 	
 	transition: border-radius;
@@ -164,12 +163,11 @@ div.orderButton[data-toggled="true"]{
 	background-color: rgba(245, 245, 255, 0.3);
 	border-radius: 5px;
 	margin: 15px;
-	min-height: 150px;
 }
 
 #hiddenText{
 	text-align: center;
-	margin-top: 40px;
+	margin: 30px 0px 40px 0px;
 	font-size: 2em;
 	font-weight: 200;
 }
@@ -183,11 +181,11 @@ div.orderButton[data-toggled="true"]{
 }
 
 #cardBack{
-	margin: 50px 15px;
-	font-size: 3em;
+	margin: 30px 10px 40px 10px;
+	font-size: 30px;
 	text-align: center;
 	font-weight: 200;
-	line-height: 1em;
+	line-height: 1.2em;
 }
 
 #quizProgress{
