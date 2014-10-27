@@ -189,4 +189,3 @@ function startQuiz(shuffleCards){
 
 
 
-
