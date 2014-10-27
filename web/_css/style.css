@@ -122,7 +122,7 @@ div.orderButton[data-toggled="true"]{
 }
 
 #correctButton, #wrongButton{
-	width: 40%;
+	width: 45%;
 }
 
 #correctButton:not([disabled]){
@@ -211,3 +211,19 @@ div.orderButton[data-toggled="true"]{
 	white-space: nowrap;
 }
 
+.multiFront{
+	margin: 20px 25px;
+	font-size: 2em;
+	text-align: left;
+	font-weight: 200;
+	line-height: 1em;
+}
+
+.multiBack{
+	margin: 20px 25px;
+	font-size: 2em;
+	text-align: right;
+	font-weight: 200;
+	line-height: 1em;
+	display: block;
+}

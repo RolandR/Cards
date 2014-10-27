@@ -28,16 +28,20 @@
 			<div class="contentScreen" id="quizScreen" style="display: none;">
 				<div class="innerContent" id="quiz">
 					<div id="quizProgress"><div id="quizProgressBar"></div></div>
-					<!--div id="correctContainer">
-						<div id="correctCounter">12 Correct</div>
-						<div id="incorrectCounter">2 Incorrect</div>
-					</div-->
-					
-					<p id="cardFront"></p>
-					<div id="hiddenCard" data-hidden="true">
-						<p id="hiddenText">Show</p>
-						<p id="cardBack"></p>
+
+					<div id="singleCard">
+						<p id="cardFront"></p>
+						<div id="hiddenCard" data-hidden="true">
+							<p id="hiddenText">Show</p>
+							<p id="cardBack"></p>
+						</div>
 					</div>
+
+					<div id="multiCard">
+						<h2 id="multiName"></h2>
+						<div id="multiCards"></div>
+					</div>
+					
 				</div>
 				<footer class="footer" id="quizFooter">
 					<button class="footerButton right" id="correctButton" disabled>I was right</button>

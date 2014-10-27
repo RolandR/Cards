@@ -37,5 +37,34 @@ var spanishCards = {
 				,["meep", "miep"]
 			]
 		}
+		,{
+			 name: "Multis"
+			,cards: [
+				 {
+					 name: "Los Números"
+					,cards: [
+						 ["1", "Uno"]
+						,["2", "Dos"]
+						,["3", "Tres"]
+						,["4", "Cuatro"]
+						,["5", "Cinco"]
+						,["6", "Seis"]
+						,["7", "Siete"]
+						,["8", "Ocho"]
+						,["9", "Nueve"]
+						,["10", "Díez"]
+					]
+				 }
+				 ,{
+					name: "Foo"
+					,cards: [
+						 ["Foooo", "Baaaaar"]
+						,["Lorem ipsum", "Ipsum dolor"]
+						,["Sit Amet", "Humpti Dumpti"]
+					]
+				 }
+				,["Kein Multi", "No Multí"]
+			]
+		}
 	]
 }
