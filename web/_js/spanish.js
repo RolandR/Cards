@@ -2,7 +2,7 @@ var spanishCards = {
 	 name: "German-Spanish"
 	,sets: [
 		{
-			 name: "Chapter 1.0"
+			 name: "Voc 1.0"
 			,cards: [
 				 ["Die Autos sind neu.", "Los coches son nuevos."]
 				,["Wie geht es dir?", "¿Cómo estás?"]
@@ -17,37 +17,79 @@ var spanishCards = {
 			]
 		}
 		,{
-			 name: "Chapter 2.0"
+			 name: "Voc 2.0"
 			,cards: [
-				 ["das Haus ist klein, aber bequem", "la casa es pequeña, pero agradable"]
-				,["noch ein Bier, bitte!", "¡otra cerveza, por favor!"]
-				,["ich möchte nicht über dieses Thema sprechen", "no quiero hablar sobre este tema"]
-				,["es sind viele Bücher auf dem Tisch", "hay muchos libros sobre la mesa"]
-				,["die Aufgabe ist nicht gross", "el deber no es grande"]
-				,["ist der Tisch besetzt?", "¿está ocupada la mesa?"]
-				,["treten Sie bitte ein!", "¡entre, por favor!"]
-				,["der Brief ist für Herrn Tellez ", "la carta es para el señor Tellez"]
-				,["hast du in deinem Betrieb einen Chef oder eine Chefin?", "en tu empresa, ¿hay jefe o jefa?"]
-				,["wir essen, und danach gehen wir an den Strand", "comemos y después vamos a la playa"]
-				,["nach dem Kurs gehen die Studierenden nach Hause", "después del curso los estudiantes van a casa "]
-				,["haben Sie Durst?", "¿tiene sed?"]
-				,["eine Portion Mandeln, bitte!", "¡una de almendras, por favor!"]
-				,["es gibt einfache Menüs", "hay menús sencillos"]
+				 ["Das Haus ist klein, aber bequem.", "La casa es pequeña, pero agradable."]
+				,["Noch ein Bier, bitte!", "¡Otra cerveza, por favor!"]
+				,["Ich möchte nicht über dieses Thema sprechen.", "No quiero hablar sobre este tema."]
+				,["Es sind viele Bücher auf dem Tisch.", "Hay muchos libros sobre la mesa."]
+				,["Die Aufgabe ist nicht gross.", "El deber no es grande."]
+				,["Ist der Tisch besetzt?", "¿Está ocupada la mesa?"]
+				,["Treten Sie bitte ein!", "¡Entre, por favor!"]
+				,["Der Brief ist für Herrn Tellez.", "La carta es para el señor Tellez."]
+				,["Hat es in deinem Betrieb einen Chef oder eine Chefin?", "En tu empresa, ¿hay jefe o jefa?"]
+				,["Wir essen, und danach gehen wir an den Strand.", "Comemos y después vamos a la playa."]
+				,["Nach dem Kurs gehen die Studierenden nach Hause.", "Después del curso los estudiantes van a casa."]
+				,["Haben Sie Durst?", "¿Tiene sed?"]
+				,["Eine Portion Mandeln, bitte!", "¡Una de almendras, por favor!"]
+				,["Es gibt einfache Menüs.", "Hay menús sencillos."]
 				//,["", ""]
 			]
 		}
 		,{
-			 name: "Chapter 3"
+			name: "Voc 2.1"
 			,cards: [
-				 ["Müde", "Cansado"]
-			]
-		}
-		,{
-			 name: "Chapter 4"
-			,cards: [
-				 ["Gnorp", "Gnarp"]
-				,["Lodido", "Ladida."]
-				,["meep", "miep"]
+				{
+					cards: [
+						 ["eintreten", "entrar"]
+						,["Ich trete ein", "entro"]
+						,["Du trittst ein", "entras"]
+						,["Er tritt ein", "entra"]
+						,["Wir treten ein", "entramos"]
+						,["Ihr tretet ein", "entráis"]
+						,["Sie treten ein", "entran"]
+					]
+				}
+				,{
+					cards: [
+						 ["essen", "comer"]
+						,["Ich esse", "como"]
+						,["Du isst", "comes"]
+						,["Sie isst", "come"]
+						,["Wir essen", "comemos"]
+						,["Ihr esst", "coméis"]
+						,["Sie essen", "comen"]
+					]
+				}
+				,{
+					cards: [
+						 ["schreiben", "escribir"]
+						,["Ich schreibe", "escribo"]
+						,["Du schreibst", "escribes"]
+						,["Er schreibt", "escribe"]
+						,["Wir schreiben", "escribimos"]
+						,["Ihr schreibt", "escribís"]
+						,["Sie schreiben", "escriben"]
+					]
+				}
+				/*,{
+					cards: [
+						 ["", ""]
+						,["Ich ", ""]
+						,["Du ", ""]
+						,["Er ", ""]
+						,["Wir ", ""]
+						,["Ihr ", ""]
+						,["Sie ", ""]
+					]
+				}*/
+				,["Ein Geschenk für dich!", "¡Un regalo para ti!"]
+				,["Was ziehst du vor, einen freien Tag oder eine freie Woche?", "¿Qué prefieres, un día libre o una semana libre?"]
+				,["Heute studiere ich, und morgen am Morgen gehe ich zum Arzt.", "Hoy estudio, y mañana por la mañana voy al médico."]
+				,["Wann gehst du von zu Hause fort?", "¿Cuándo sales de casa?"]
+				,["Me levanto siempre a las nueve.", "Ich stehe immer um neun auf."]
+				,["Alex spielt nicht jeden Tag Klavier.", "Alex no toca el piano cada día."]
+				,["Ich kenne Juan nicht.", "No conozco a Juan."]
 			]
 		}
 		,{
@@ -56,27 +98,36 @@ var spanishCards = {
 				 {
 					 name: "Los Números"
 					,cards: [
-						 ["1", "Uno"]
-						,["2", "Dos"]
-						,["3", "Tres"]
-						,["4", "Cuatro"]
-						,["5", "Cinco"]
-						,["6", "Seis"]
-						,["7", "Siete"]
-						,["8", "Ocho"]
-						,["9", "Nueve"]
-						,["10", "Díez"]
+						 ["1, 2, 3", "uno, dos, tres"]
+						,["4, 5, 6", "cuatro, cinco, seis"]
+						,["7, 8, 9", "siete, ocho, nueve"]
 					]
 				 }
-				 ,{
-					name: "Foo"
+				,{
+					 name: "Más Números"
 					,cards: [
-						 ["Foooo", "Baaaaar"]
-						,["Lorem ipsum", "Ipsum dolor"]
-						,["Sit Amet", "Humpti Dumpti"]
+						 ["10, 11, 12", "diez, once, doce"]
+						,["13, 14, 15", "trece, catorce, quince"]
+						,["16, 17, 18", "dieciséis, diecisiete, dieciocho"]
 					]
 				 }
-				,["Kein Multi", "No Multí"]
+				,{
+					name: "Números grandes"
+					,cards: [
+						 ["19, 20, 21", "diecinueve, veinte, veintiuno"]
+						,["30, 40, 50", "treinta, cuarenta, cincuenta"]
+						,["60, 70, 80", "sesenta, setenta, ochenta"]
+					]
+				}
+				,{
+					 name: "Los Colores"
+					,cards: [
+						 ["Rot, Grün, Blau", "Rojo, Verde, Azul"]
+						,["Gelb, Schwarz, Weiss", "Amarillo, Negro, Blanco"]
+						,["Orange, Grau, Braun", "Naranja, Gris, Café"]
+						,["Rosarot, Hellblau, ", "Rosado, Azul claro, Verde oscuro"]
+					]
+				}
 			]
 		}
 	]

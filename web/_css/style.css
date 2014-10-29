@@ -76,6 +76,14 @@ h2#deckName{
 	background-color: #8888AA;
 }
 
+.footerButton{
+	height: 40px;
+	margin: 5px 5px 5px 0px;
+	width: 100px;
+	line-height: 37px;
+	padding: 0px;
+}
+
 .innerContent{ /* For use with footers */
 	position: absolute;
 	bottom: 50px;
@@ -85,20 +93,25 @@ h2#deckName{
 	overflow: auto;
 }
 
+#quizScreen .footer{
+	height: 70px;
+}
+
+#quizScreen .footerButton{
+	height: 60px;
+}
+
+#quizScreen .innerContent{
+	bottom: 70px;
+	top: 50px;
+}
+
 .right{
 	float: right;
 }
 
 footer{
 	padding-left: 5px;
-}
-
-.footerButton{
-	height: 40px;
-	margin: 5px 5px 5px 0px;
-	width: 100px;
-	line-height: 37px;
-	padding: 0px;
 }
 
 div.orderButton{
@@ -122,10 +135,11 @@ div.orderButton[data-toggled="true"]{
 }
 
 #correctButton, #wrongButton{
-	width: 45%;
+	width: 47%;
 }
 
-#correctButton:not([disabled]){
+#correctButton:not([disabled]),
+#startButton:not([disabled]){
 	background: linear-gradient(to bottom, rgba(200, 250, 200, 0.8), rgba(150, 200, 150, 0.8));
 }
 
@@ -141,7 +155,8 @@ div.orderButton[data-toggled="true"]{
 	line-height: 1.2em;
 }
 
-#hiddenCard[data-hidden="true"]{
+#hiddenCard[data-hidden="true"],
+.multiBack[data-hidden="true"]{
 	padding: 5px;
 	border: 1px #000000 solid;
 	border-radius: 5px 5px 5px 40px;
@@ -153,11 +168,13 @@ div.orderButton[data-toggled="true"]{
 	transition-duration: 300ms;
 }
 
-#hiddenCard[data-hidden="true"]:hover{
+#hiddenCard[data-hidden="true"]:hover,
+.multiBack[data-hidden="true"]:hover{
 	border-radius: 5px 5px 5px 80px;
 }
 
-#hiddenCard[data-hidden="false"]{
+#hiddenCard[data-hidden="false"],
+.multiBack[data-hidden="false"]{
 	padding: 5px;
 	border: 1px rgba(0, 0, 0, 0.3) solid;
 	background-color: rgba(245, 245, 255, 0.3);
@@ -165,11 +182,18 @@ div.orderButton[data-toggled="true"]{
 	margin: 15px;
 }
 
-#hiddenText{
+#hiddenText,
+.multiBackTitle{
 	text-align: center;
 	margin: 30px 0px 40px 0px;
 	font-size: 2em;
+	line-height: 1.2em;
 	font-weight: 200;
+}
+
+.multiBackTitle{
+	margin: 20px 10px 25px 10px;
+	font-size: 30px;
 }
 
 #hiddenCard[data-hidden="false"] #hiddenText{
@@ -180,12 +204,18 @@ div.orderButton[data-toggled="true"]{
 	display: none;
 }
 
-#cardBack{
+#cardBack,
+.multiBackText{
 	margin: 30px 10px 40px 10px;
 	font-size: 30px;
 	text-align: center;
 	font-weight: 200;
 	line-height: 1.2em;
+}
+
+.multiBackText{
+	margin: 20px 10px 25px 10px;
+	font-size: 30px;
 }
 
 #quizProgress{
@@ -197,8 +227,8 @@ div.orderButton[data-toggled="true"]{
 #quizProgressBar{
 	height: 100%;
 	background:
-		linear-gradient(250deg, transparent 10px, #AAAAFF 8px) top right,
-		linear-gradient(290deg, transparent 10px, #AAAAFF 8px) bottom right;
+		linear-gradient(250deg, transparent 10px, #AAAAFF 11px) top right,
+		linear-gradient(290deg, transparent 10px, #AAAAFF 11px) bottom right;
 	background-size: 100% 50%;
 	background-repeat: no-repeat;
 	font-size: 2em;
@@ -224,4 +254,12 @@ div.orderButton[data-toggled="true"]{
 	font-weight: 200;
 	line-height: 1em;
 	display: block;
+}
+
+.multiBackTitle{
+	
+}
+
+.multiBackText{
+	display: none;
 }

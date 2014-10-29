@@ -66,7 +66,7 @@ function buildSetsScreen(cards){
 			if(cards.sets[i].toggleButton.isToggled()){
 				for(var a in cards.sets[i].cards){
 					var card = cards.sets[i].cards[a];
-					if(card.name){
+					if(!(card instanceof Array)){
 						selectedCards.push({
 							 set: cards.sets[i]
 							,isMulti: true
@@ -156,47 +156,101 @@ function startQuiz(shuffleCards){
 			passLength = cardStack.length;
 		}
 		
+		document.getElementById("quiz").scrollTop = 0;
+		
 		progressBarEl.innerHTML = "Card "+(passLength - cardStack.length + 1)+" of "+passLength;
 		progressBarEl.style.width = ((passLength - cardStack.length + 1) / passLength) * progressBarContainer.offsetWidth + "px";
 		
 		var card = cardStack[0];
-
-		console.log(card);
+		
+		pageTitleEl.innerHTML = card.set.name + " - #"+ (~~(card.number) + 1);
 
 		if(card.isMulti){ // Multi card
 
 			document.getElementById("singleCard").style.display = "none";
 			document.getElementById("multiCard").style.display = "block";
 
-			document.getElementById("multiName").innerHTML = card.name;
+			if(card.name){
+				document.getElementById("multiName").innerHTML = card.name;
+				document.getElementById("multiName").style.display = "block";
+			} else {
+				document.getElementById("multiName").style.display = "none";
+			}
+			
 			
 			var multiCardsContainer = document.getElementById("multiCards");
 			multiCardsContainer.innerHTML = "";
 
-			for(var i in card.cards){
-				var front = document.createElement("p");
-				front.className = "multiFront";
-				front.innerHTML = card.cards[i][0];
-				
-				var back = document.createElement("div");
-				back.className = "multiBack";
-				back.innerHTML = card.cards[i][1];
+			var hiddenCount = card.cards.length;
+			var multiCards = [];
 
-				multiCardsContainer.appendChild(front);
-				multiCardsContainer.appendChild(back);
+			for(var i in card.cards){
+				multiCards.push(new MultiCard(card.cards[i][0], card.cards[i][1], function(){
+					hiddenCount--;
+					if(hiddenCount <= 0){
+						correctButton.disabled = false;
+						wrongButton.disabled = false;
+					}
+				}));
 			}
+			
 			
 			
 		} else { // Single card
 
 			document.getElementById("singleCard").style.display = "block";
 			document.getElementById("multiCard").style.display = "none";
-			
-			pageTitleEl.innerHTML = card.set.name + " - #"+ (~~(card.number) + 1);
 		
 			cardFrontEl.innerHTML = card.front;
 			cardBackEl.innerHTML = card.back;
 		}
+	}
+
+	function MultiCard(frontText, backText, onShow){
+		var hidden = true;
+
+		var front = document.createElement("p");
+		front.className = "multiFront";
+		front.innerHTML = frontText;
+		
+		var back = document.createElement("div");
+		back.className = "multiBack";
+		back.dataset.hidden = true;
+		var backTitleEl = document.createElement("p");
+		backTitleEl.className = "multiBackTitle";
+		backTitleEl.innerHTML = "Show";
+		var backTextEl = document.createElement("p");
+		backTextEl.className = "multiBackText";
+		backTextEl.innerHTML = backText;
+
+		back.appendChild(backTitleEl);
+		back.appendChild(backTextEl);
+
+		back.onclick = function(){
+			if(hidden){
+				show();
+				hidden = false;
+				onShow();
+			}
+		}
+
+		var multiCardsContainer = document.getElementById("multiCards");
+		multiCardsContainer.appendChild(front);
+		multiCardsContainer.appendChild(back);
+
+		function show(){
+			
+			back.dataset.hidden = "false";
+
+			backTitleEl.style.display = "none";
+			backTextEl.style.display = "block";
+		
+		}
+		
+		return {
+			 isHidden: function(){return hidden;}
+			,show: show
+		};
 	}
 	
 	function showSolution(){
